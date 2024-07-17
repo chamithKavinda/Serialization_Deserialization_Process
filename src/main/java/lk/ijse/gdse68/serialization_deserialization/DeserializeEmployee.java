@@ -5,14 +5,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.File;
 import java.io.IOException;
 
-public class SerializeEmployee {
+public class DeserializeEmployee {
     public static void main(String[] args){
-        Employee employee = new Employee("Chamith","23","Galle");
-
         ObjectMapper mapper = new ObjectMapper();
-        try{
-            mapper.writeValue(new File(""), employee);
-            System.out.println("Employee serialized to 'employee.json'");
+        try {
+            Employee employee = mapper.readValue(new File(""), Employee.class);
+            System.out.println("Employee deserialized from 'employee.json'");
+            System.out.println(employee);
         }catch (IOException e){
             e.printStackTrace();
         }
