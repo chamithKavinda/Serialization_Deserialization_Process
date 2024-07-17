@@ -11,7 +11,7 @@ public class SerializeEmployee {
 
         ObjectMapper mapper = new ObjectMapper();
         try{
-            mapper.writeValue(new File(""), employee);
+            mapper.writeValue(new File("employee.json"), employee);
             System.out.println("Employee serialized to 'employee.json'");
         }catch (IOException e){
             e.printStackTrace();
